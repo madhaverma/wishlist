@@ -1,0 +1,80 @@
+:root {
+  --primary-color: #7A3F98;
+  --text-color: #333;
+  --link-color: #555;
+  --white: #fff;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-family);
+  max-width: 100%;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 16px;
+  margin-left: 30px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: var(--primary-color);
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.header-buttons button {
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-login:hover {
+  background-color: rgba(122, 63, 152, 0.1);
+}
+
+.btn-signup {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.btn-signup:hover {
+  background-color: #6a3485;
+}
