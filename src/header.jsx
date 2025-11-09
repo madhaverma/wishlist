@@ -1,19 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 function Header(){
 
     return <div className="header"> 
-  <div class="header-logo">Wishlist</div>
-  <div class="header-nav">
-    <a href="#features">Features</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#pricing">Pricing</a>
+  <Link to="/"><div className="header-logo">Wishlist</div></Link>
+  <div className="header-nav">
+    <Link to="#features">Features</Link>
+    <Link to="#how-it-works">How It Works</Link>
+    <Link to="#pricing">Pricing</Link>
   </div>
 
-  <div class="header-buttons">
-    <button class="btn-login">Login</button>
-    <button class="btn-signup">Sign Up</button>
+  <div className="header-buttons">
+    <Link to="/Login" className="btn-login">
+          login
+        </Link>
+    {/* <button className="btn-login">Login</button> */}
+    <button className="btn-signup">Sign Up</button>
   </div>
 </div>   
 }

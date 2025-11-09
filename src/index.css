@@ -63,6 +63,7 @@
   background-color: transparent;
   color: var(--primary-color);
   border-color: var(--primary-color);
+  text-decoration: none;
 }
 
 .btn-login:hover {
@@ -101,6 +102,29 @@
   color: #333;
   line-height: 1.1;
   margin-bottom: 20px;
+  overflow: hidden; /* Ensures the text stays within bounds */
+  white-space: nowrap; /* Prevents text wrapping */
+  border-right: 2px solid #333; /* Cursor effect */
+  animation: typing 4s steps(30, end), blink-caret 0.5s step-end infinite;
+  border-right: none; /* Remove the cursor after animation */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
 }
 
 .hero-description {
@@ -173,3 +197,157 @@
   font-family: var(--font-family);
   margin-top: 40px;
 }
+
+/* login  */
+
+ .body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+       font-family: "Poppins", sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+     
+
+    .login-container {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .login-container p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus {
+      border-color: #0077ff;
+    }
+
+    .forgot-link {
+      display: block;
+      text-align: right;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: #0077ff;
+      text-decoration: none;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    /* 🔹 Styled anchor as button */
+    .btn {
+      display: block;
+      text-align: center;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      background: #0077ff;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #005fd1;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 1.5rem 0;
+      position: relative;
+      color: #777;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .google-btn {
+      display: block;
+      text-align: center;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      background: #fff;
+      color: #555;
+      border: 1px solid #ddd;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .google-btn:hover {
+      background: #f9f9f9;
+    }
+
+    .signup-text {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #555;
+    }
+
+    .signup-text a {
+      color: #0077ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
