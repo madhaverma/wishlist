@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 function Header(){
 
     return <div className="header"> 
-  <Link to="/"><div className="header-logo">Wishlist</div></Link>
+ <div className="header-logo">
+  <Link to="/">Wishlist</Link> </div>
   <div className="header-nav">
-    <Link to="#features">Features</Link>
-    <Link to="#how-it-works">How It Works</Link>
-    <Link to="#pricing">Pricing</Link>
+    <Link to="#">Get started</Link>
+      <Link to="/Create">Create</Link>
+      <Link to="#read">Gallery</Link>
   </div>
 
   <div className="header-buttons">
     <Link to="/Login" className="btn-login">
-          login
+        <b> login  </b>  
         </Link>
-    {/* <button className="btn-login">Login</button> */}
     <button className="btn-signup">Sign Up</button>
   </div>
 </div>   

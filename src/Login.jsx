@@ -17,7 +17,7 @@ function Login() {
 
       <a href="#" className="forgot-link">Forgot password?</a>
 
-      <button type="submit">Sign In</button>
+      <button type="submit" className="google-btn">Sign In</button>
 
       <div className="divider">or</div>
 

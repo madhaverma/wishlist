@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 function Home() {
-  const [value, setValue] = useState("Create");
+  
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setValue((prev) => (prev === "Create" ? "share" : "Create"));
-    }, 5000); // Change every 10 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="hero-section">
       <div className="hero-content">
-        <h1 key={value} className="hero-title">
+        <h1 className="hero-title">
         
-          {value} Your Perfect Wishlist .
+         <b>Create Your Perfect Wishlist .</b> 
         </h1>
         <p className="hero-description">
           The simplest way to get what you really want. Add items from any store,
