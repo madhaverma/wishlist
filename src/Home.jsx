@@ -16,7 +16,7 @@ function Home() {
           share with friends and family, and make every gift a perfect one.
         </p>
         <div class="hero-buttons">
-          <a href="#" class="btn-primary">
+          <a href="/login" class="btn-primary">
             Get Started For Free
           </a>
           <a href="#" class="btn-secondary">
