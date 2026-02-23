@@ -66,8 +66,8 @@
   width: 100%;
   padding: 13px;
   border-radius: 8px;
-  border: none;
-  background: #7A3F98;
+  border: 1px solid #7A3F98;
+  background:  #7A3F98;
   color: #ffffff;
   font-size: 15px;
   font-weight: 600;
@@ -76,7 +76,8 @@
 }
 
 .signupBtn:hover {
-  background: #6a3485;
+  color: #ffffff;
+  background:  #7A3F98;
 }
 
 
@@ -125,3 +126,6 @@
 .loginText a:hover {
   text-decoration: underline;
 }
+
+
+

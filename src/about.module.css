@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e5e7ff;
+  color: #3b4cff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #3b4cff;
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: #3b4cff;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.ctabtn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4f46e5, #3b4cff);
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(59, 76, 255, 0.25);
+  transition: 0.3s ease;
+  margin-bottom: 80px;
+}
+
+.ctabtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(59, 76, 255, 0.35);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.orange {
+  background: #fff4e5;
+}
+
+.blue {
+  background: #e8edff;
+}
+
+.green {
+  background: #e6f7ef;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+

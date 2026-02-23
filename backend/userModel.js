@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-mongoose.connect("moongodb://localhost:27017/wishlist");
+dotenv.config();
+
+
+
+mongoose.connect(process.env.ATLAS_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
 
 const userSchema = new mongoose.Schema({
     name: String,

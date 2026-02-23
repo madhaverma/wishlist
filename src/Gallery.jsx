@@ -1,25 +1,46 @@
+import React, { useState, useEffect } from 'react';
 import styles from "./gallery.module.css";
+import Card from './Card';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function Gallery() {
+
+const Gallery = () => {
+  const [items, setItems] = useState([]); 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    
+    const getDbData = async () => {
+      try {
+        const response = await fetch('http:/127.0.0.1:27017/wishlist');
+        const data = await response.json();
+        setItems(data);
+      } catch (err) {
+        console.error("Failed to fetch:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getDbData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+
+  if (items.length === 0) return null;
+
+
+
   return (
-    <div className={styles.Container}> 
-    <div className={styles.eventsContainer}>
-      <div className={styles.eventCard}>
-        <h2>Joshua Tree Desert Retreat</h2>
-
-        <p className={styles.distance}>82 Miles away</p>
-        <p className={styles.date}>Oct 22 - 27</p>
-
-        <div className={styles.imageUrl}>
-          <span>Image URL</span>
-          <p>https://images.unsplash.com/photo-joshua-tree-modern-cabin</p>
-        </div>
-      </div>
-</div>
-</div>
-
+    <div className="card-container">
+      {items.map((item) => (
+        <Card key={item.id} title={item.title} description={item.description}  url={item.url}/>
+      ))}
+       <IconButton aria-label="delete">
+        <DeleteIcon />
+      </IconButton>
+    </div>
   );
 }
-
 export default Gallery;
 
