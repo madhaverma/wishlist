@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import API from "./api"; 
+import API from "./api";
 
 function Header() {
   const location = useLocation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await API.get("/me");  
-        setIsAuthenticated(true);
+        const response = await API.get("/me");
+        const authData = response?.data;
+
+        const loggedIn = Boolean(authData?._id || authData?.id || authData?.email);
+
+        setIsAuthenticated(loggedIn);
       } catch (error) {
         setIsAuthenticated(false);
       }
@@ -20,10 +23,13 @@ function Header() {
     checkAuth();
   }, [location.pathname]);
 
-
   const handleLogout = async () => {
-    await API.post("/logout");
-    setIsAuthenticated(false);
+    try {
+      await API.post("/logout");
+      setIsAuthenticated(false);
+    } catch (error) {
+      console.error("Logout Error:", error);
+    }
   };
 
   return (
@@ -34,17 +40,17 @@ function Header() {
 
       <div className="header-nav">
         <Link to="/about">Get started</Link>
-        {isAuthenticated && <Link to="/Create">Create</Link>}
+        {isAuthenticated && <Link to="/create">Create</Link>}
         {isAuthenticated && <Link to="/read">Gallery</Link>}
       </div>
 
       <div className="header-buttons">
         {!isAuthenticated ? (
           <>
-            <Link to="/Login" className="btn-login">
+            <Link to="/login" className="btn-login">
               <b>Login</b>
             </Link>
-            <Link to="/SignUp">
+            <Link to="/signup">
               <button className="btn-signup">Sign Up</button>
             </Link>
           </>

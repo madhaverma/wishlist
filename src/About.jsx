@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
         to watch, books you want to read, and articles that inspire you.
       </p>
 
-        <Link to="/Create" className={styles.ctabtn}>Create Your First Board</Link>
+        <Link to="/create" className={styles.ctabtn}>Create Your First Board</Link>
 
       <div className={styles.cards}>
         <div className={styles.card}>

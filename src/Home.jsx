@@ -1,4 +1,5 @@
-import React, { useState} from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   
@@ -15,13 +16,11 @@ function Home() {
           The simplest way to get what you really want. Add items from any store,
           share with friends and family, and make every gift a perfect one.
         </p>
-        <div class="hero-buttons">
-          <a href="/login" class="btn-primary">
+        <div className="hero-buttons">
+          <a href="/login" className="btn-primary">
             Get Started For Free
           </a>
-          <a href="#" class="btn-secondary">
-            How It Works
-          </a>
+          <Link to="/about" className="btn-secondary">  How It Works </Link>
         </div>
       </div>
 

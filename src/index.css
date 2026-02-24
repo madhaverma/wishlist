@@ -91,6 +91,27 @@
   background-color: #6a3485;
 }
 
+.btn-logout {
+  background-color: #fff1f2;
+  color: #be123c;
+  border-color: #fecdd3;
+  font-weight: 600;
+}
+
+.btn-logout:hover {
+  background-color: #ffe4e6;
+  border-color: #fda4af;
+}
+
+.btn-logout:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.2);
+}
+
+.btn-logout:active {
+  transform: translateY(1px);
+}
+
 /* header  */
 .hero-section {
   display: flex;

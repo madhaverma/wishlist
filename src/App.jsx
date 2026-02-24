@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
@@ -17,9 +16,9 @@ return (
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<InputForm />} /> 
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/read" element={<Gallery />} /> 
-        <Route path="/SignUp" element={<SignUp/>} /> 
+        <Route path="/signup" element={<SignUp/>} /> 
         <Route path="/about" element={<About/>} /> 
     </Routes>
     <Footer />

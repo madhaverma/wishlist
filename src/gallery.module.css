@@ -66,3 +66,67 @@
   word-break: break-all;
 }
 
+.editInput {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid #d8dbe2;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  background: #fafbfc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editInput:focus {
+  outline: none;
+  border-color: #7a3f98;
+  box-shadow: 0 0 0 3px rgba(122, 63, 152, 0.15);
+  background: #fff;
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.primaryBtn,
+.dangerBtn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryBtn {
+  background: #7a3f98;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(122, 63, 152, 0.22);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-1px);
+}
+
+.dangerBtn {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.dangerBtn:hover {
+  background: #ffe4e6;
+}
+
+.primaryBtn:disabled,
+.dangerBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+  box-shadow: none;
+}
+

@@ -1,51 +1,69 @@
-import { useState } from 'react';
-import API from './api.js';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import API from "./api";
 
 function Login() {
-  const [email , setemail]= useState("");
-  const [pass , setpass]= useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-   const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
     try {
-      const res = await API.post("/create", {
-        email,
-        password,
-      });
-
-      alert(res.data.message);
-
-
+      const res = await API.post("/login", { email, password });
+      alert(res.data?.message || "Login successful");
+      navigate("/read");
     } catch (err) {
-      alert("Login failed");
-      console.log(err);
+      alert(err?.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false);
     }
   };
 
+  return (
+    <div className="body">
+      <div className="login-container">
+        <h2>Welcome back</h2>
+        <p>Please enter your details to sign in.</p>
 
-  return <div  className="body"><div className="login-container">
-    <h2>Welcome back 👋</h2>
-    <p>Please enter your details to sign in.</p>
+        <form onSubmit={handleLogin}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-    <form >
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input onChange={(e)=>{setemail(e.target.value)}} type="email" id="email" placeholder="Enter your email" required />
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button disabled={loading} type="submit" className="google-btn">
+            {loading ? "Logging in..." : "Log In"}
+          </button>
+          <div className="signup-text">
+            Don&apos;t have an account? <Link to="/signup">Sign up for free</Link>
+          </div>
+        </form>
       </div>
-
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input onChange={(e)=>{setpass(e.target.value)}} type="password" id="password" placeholder="Enter your password" required />
-      </div>
-
-      <button onClick={handleLogin}  type="submit" className="google-btn">Log In</button>
-      <div className="signup-text">
-          Don’t have an account? <Link to= "/SignUp">Sign up for free</Link>
-      </div>
-    </form>
-  </div>
-</div> 
-};
-
+    </div>
+  );
+}
 
 export default Login;
